@@ -1,10 +1,10 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Check } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import axios from 'axios'; // Import Axios
 
 const WaitlistForm = () => {
   const [formData, setFormData] = useState({
@@ -35,19 +35,38 @@ const WaitlistForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    const interestsString = Object.keys(formData.interests)
+      .filter(key => formData.interests[key as keyof typeof formData.interests])
+      .join(', ');
+
+    try {
+      const response = await axios.post('https://allstar.nukta.pro/api/waitlistForm', {
+        name: formData.name,
+        email: formData.email,
+        interests: interestsString
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
       setIsSubmitting(false);
       setIsSubmitted(true);
       toast({
         title: "You're on the list!",
-        description: "We'll let you know when NextPlay launches.",
+        description: response.data.message,
       });
-    }, 1500);
+    } catch (error) {
+      setIsSubmitting(false);
+      toast({
+        title: "Error",
+        description: error.response?.data?.message || "An error occurred. Please try again.",
+      });
+    }
   };
 
   return (

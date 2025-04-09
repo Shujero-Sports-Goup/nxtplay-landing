@@ -1,4 +1,4 @@
-
+// src/components/LeagueForm.tsx
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Check } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import axios from 'axios'; // Import Axios
 
 const LeagueForm = () => {
   const [formData, setFormData] = useState({
@@ -32,19 +33,39 @@ const LeagueForm = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const response = await axios.post('https://allstar.nukta.pro/api/leagueForm', {
+        leagueName: formData.leagueName,
+        contactPerson: formData.contactName,
+        email: formData.email,
+        phoneNumber: formData.phone,
+        sport: formData.sportType,
+        leagueSize: formData.leagueSize,
+        expectedStart: formData.startDate,
+        additionalInfo: formData.message
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
       setIsSubmitting(false);
       setIsSubmitted(true);
       toast({
-        title: "Registration successful!",
-        description: "We'll contact you about setting up your league soon.",
+        title: "Registration Successful!",
+        description: response.data.message,
       });
-    }, 1500);
+    } catch (error) {
+      setIsSubmitting(false);
+      toast({
+        title: "Error",
+        description: error.response?.data?.message || "An error occurred. Please try again.",
+      });
+    }
   };
 
   return (

@@ -1,4 +1,4 @@
-
+// src/components/BusinessForm.tsx
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Check } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import axios from 'axios'; // Import Axios
 
 const BusinessForm = () => {
   const [formData, setFormData] = useState({
@@ -30,19 +31,37 @@ const BusinessForm = () => {
     setFormData((prev) => ({ ...prev, businessType: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const response = await axios.post('https://allstar.nukta.pro/api/businessForm', {
+        companyName: formData.companyName,
+        name: formData.contactName,
+        email: formData.email,
+        phoneNumber: formData.phone,
+        businessType: formData.businessType,
+        message: formData.message
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
       setIsSubmitting(false);
       setIsSubmitted(true);
       toast({
-        title: "Request received!",
-        description: "We'll contact you about advertising opportunities soon.",
+        title: "Request Received!",
+        description: response.data.message,
       });
-    }, 1500);
+    } catch (error) {
+      setIsSubmitting(false);
+      toast({
+        title: "Error",
+        description: error.response?.data?.message || "An error occurred. Please try again.",
+      });
+    }
   };
 
   return (
