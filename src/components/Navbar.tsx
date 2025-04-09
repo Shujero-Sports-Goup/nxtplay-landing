@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
           <span className="text-xl font-bold text-nextplay-blue flex items-center">
-            <span className="text-nextplay-green">Next</span>Play
+            <span className="text-nextplay-blue">Next</span>Play
           </span>
         </div>
 
@@ -26,7 +26,7 @@ const Navbar = () => {
           <a href="#audience" className="text-foreground/80 hover:text-primary transition-colors">
             Who It's For
           </a>
-          <Button asChild variant="secondary">
+          <Button asChild>
             <a href="#waitlist">Join Now</a>
           </Button>
         </div>
@@ -71,8 +71,7 @@ const Navbar = () => {
             </a>
             <Button 
               asChild 
-              variant="secondary" 
-              className="w-full"
+              className="bg-nextplay-blue hover:bg-nextplay-blue/90 text-white w-full"
               onClick={() => setIsMenuOpen(false)}
             >
               <a href="#waitlist">Join Now</a>

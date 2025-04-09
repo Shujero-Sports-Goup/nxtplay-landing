@@ -139,7 +139,7 @@ const WaitlistForm = () => {
           
           <Button 
             type="submit" 
-            className="w-full bg-nextplay-green hover:bg-nextplay-green/90"
+            className="w-full bg-nextplay-blue hover:bg-nextplay-blue/90"
             disabled={isSubmitting}
           >
             {isSubmitting ? 'Submitting...' : 'Join Waitlist'}

@@ -33,8 +33,27 @@ const LeagueForm = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
+  const validateForm = () => {
+    const { leagueName, contactName, email, phone, sportType, leagueSize, startDate } = formData;
+    const phoneRegex = /^[0-9]+$/; // Regex to check if phone contains only digits
+
+    if (!leagueName || !contactName || !email || !phone || !sportType || !leagueSize || !startDate) {
+      toast({ title: "Error", description: "All fields are required.", variant: "destructive" });
+      return false;
+    }
+
+    if (!phoneRegex.test(phone)) {
+      toast({ title: "Error", description: "Phone number must contain only digits.", variant: "destructive" });
+      return false;
+    }
+
+    return true;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateForm()) return; // Validate before submission
+
     setIsSubmitting(true);
     
     try {
@@ -133,6 +152,7 @@ const LeagueForm = () => {
                 placeholder="Your phone number"
                 value={formData.phone}
                 onChange={handleInputChange}
+                required
               />
             </div>
           </div>
@@ -178,6 +198,7 @@ const LeagueForm = () => {
               type="date"
               value={formData.startDate}
               onChange={handleInputChange}
+              required
             />
           </div>
           

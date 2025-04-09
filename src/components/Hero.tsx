@@ -16,7 +16,7 @@ const Hero = () => {
           <div className="animate-slideUp [animation-delay:100ms]">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
               <span className="text-nextplay-blue">Where Sports Meets</span> 
-              <span className="text-nextplay-green"> Real-Time Value</span>
+              <span className="text-nextplay-blue"> Real-Time Value</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
               Built for the game, powered by data.
@@ -29,7 +29,7 @@ const Hero = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 w-full justify-center items-center animate-slideUp [animation-delay:300ms]">
-            <Button asChild className="bg-nextplay-green hover:bg-nextplay-green/90 text-white font-semibold py-6 px-8 rounded-lg w-full sm:w-auto">
+            <Button asChild className="bg-nextplay-blue hover:bg-nextplay-blue/90 text-white font-semibold py-6 px-8 rounded-lg w-full sm:w-auto">
               <a href="#waitlist">
                 Join the Waitlist
                 <ArrowRight className="ml-2 h-4 w-4" />
