@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, BarChart, Play } from 'lucide-react';
@@ -59,30 +58,23 @@ const AudienceSection = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold mb-4">Why It Matters</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+        {/* Why It Matters Section - Updated Spacing */}
+        <div className="mt-24 text-center px-4 sm:px-6 lg:px-8">
+          <h3 className="text-3xl font-bold mb-10">Why It Matters</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
             {[
               {
                 title: "Ads that Work",
                 description: "Forget guessing games. We place your brand where fans actually look."
               },
               {
-                title: "No Camera? No Problem",
-                description: "We focus on live stats, not expensive footage."
-              },
-              {
-                title: "Built for Growth",
-                description: "Cover basketball and expand to other sports as you grow."
-              },
-              {
                 title: "Powered by Nukta",
                 description: "We're building the future of sports, one stat at a time."
               }
             ].map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-border">
-                <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
-                <p className="text-muted-foreground">{item.description}</p>
+              <div key={index} className="bg-white p-8 rounded-xl shadow-md border border-border">
+                <h4 className="text-xl font-semibold mb-3">{item.title}</h4>
+                <p className="text-muted-foreground text-base">{item.description}</p>
               </div>
             ))}
           </div>

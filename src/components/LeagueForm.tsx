@@ -166,10 +166,6 @@ const LeagueForm = () => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="basketball">Basketball</SelectItem>
-                  <SelectItem value="football">Football</SelectItem>
-                  <SelectItem value="soccer">Soccer</SelectItem>
-                  <SelectItem value="volleyball">Volleyball</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
                 </SelectContent>
               </Select>
             </div>
