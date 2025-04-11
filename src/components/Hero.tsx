@@ -3,6 +3,9 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import LaunchCountdown from './LaunchCountdown';
 
+
+
+
 const Hero = () => {
   return (
     <section className="relative overflow-hidden">
@@ -35,15 +38,15 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
-            <Button asChild variant="outline" className="border-nextplay-blue text-nextplay-blue hover:bg-nextplay-blue/5 font-semibold py-6 px-8 rounded-lg w-full sm:w-auto">
-              <a href="#partner">
+            {/* <Button asChild variant="outline" className="border-nextplay-blue text-nextplay-blue hover:bg-nextplay-blue/5 font-semibold py-6 px-8 rounded-lg w-full sm:w-auto">
+              <a href="#waitl">
                 Partner with Us
               </a>
-            </Button>
+            </Button> */}
           </div>
           
           <div className="w-full max-w-4xl mx-auto mt-16 relative animate-slideUp [animation-delay:500ms]">
-            <div className="aspect-video relative bg-gradient-to-br from-nextplay-blue to-nextplay-green rounded-lg shadow-xl overflow-hidden">
+            <div className="aspect-video relative bg-gradient-to-br from-nextplay-blue to-nextplay-blue rounded-lg shadow-xl overflow-hidden">
               <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                 <div className="text-white text-center">
                   <div className="bg-black/50 backdrop-blur-sm p-6 rounded-lg">

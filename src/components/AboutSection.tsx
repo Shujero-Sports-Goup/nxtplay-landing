@@ -49,7 +49,7 @@ const AboutSection = () => {
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-nextplay-blue to-nextplay-green rounded-lg p-8 text-white">
+        <div className="bg-gradient-to-r from-nextplay-blue to-nextplay-blue rounded-lg p-8 text-white">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold mb-4">From 1v1 matchups to full leagues</h3>

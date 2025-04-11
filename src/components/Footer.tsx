@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-nextplay-blue text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="space-y-4">
             <h3 className="text-xl font-bold">NextPlay</h3>
             <p className="text-white/80">
@@ -47,14 +47,14 @@ const Footer = () => {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
         
         <div className="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/60">
           <p>© {new Date().getFullYear()} NextPlay. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            {/* <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Contact Us</a>
+            <a href="#" className="hover:text-white transition-colors">Contact Us</a> */}
           </div>
         </div>
       </div>

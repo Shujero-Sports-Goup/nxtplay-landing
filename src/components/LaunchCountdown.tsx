@@ -40,7 +40,7 @@ const LaunchCountdown = () => {
 
   return (
     <div className="flex items-center space-x-2 mt-6">
-      <Clock className="text-nextplay-green mr-2" size={24} />
+      <Clock className="text-nextplay-blue mr-2" size={24} />
       <div className="flex space-x-2">
         {renderTimeUnit(timeLeft.days, 'DAYS')}
         {renderTimeUnit(timeLeft.hours, 'HRS')}

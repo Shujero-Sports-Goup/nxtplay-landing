@@ -72,6 +72,8 @@ const LeagueForm = () => {
         }
       });
 
+     
+
       setIsSubmitting(false);
       setIsSubmitted(true);
       toast({

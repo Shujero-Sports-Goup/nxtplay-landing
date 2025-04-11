@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import logo from '../../public/logo.svg'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -11,7 +12,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
           <span className="text-xl font-bold text-nextplay-blue flex items-center">
-            <span className="text-nextplay-blue">Next</span>Play
+            <img width='100px' src={logo}/>
+            
           </span>
         </div>
 
