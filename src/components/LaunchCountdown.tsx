@@ -5,10 +5,10 @@ import { Clock } from 'lucide-react';
 const LaunchCountdown = () => {
   const launchDate = new Date('2024-09-01T00:00:00Z'); // Set your planned launch date here
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
+    days: 9,
+    hours: 216,
+    minutes: 12960,
+    seconds: 777600
   });
 
   useEffect(() => {

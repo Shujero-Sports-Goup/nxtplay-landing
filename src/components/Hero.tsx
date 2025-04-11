@@ -1,9 +1,8 @@
+import RotatingWord from './RotatingWord'; // Add at the top
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import LaunchCountdown from './LaunchCountdown';
-
-
 
 
 const Hero = () => {
@@ -17,9 +16,8 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-8">
           <div className="animate-slideUp [animation-delay:100ms]">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-              <span className="text-nextplay-blue">Where Sports Meets</span> 
-              <span className="text-nextplay-blue"> Real-Time Value</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 text-nextplay-blue">
+              Where Every <RotatingWord /> Becomes a Story
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
               Built for the game, powered by data.
