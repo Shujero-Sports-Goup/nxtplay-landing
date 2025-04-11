@@ -11,7 +11,7 @@ const AboutSection = () => {
     },
     {
       title: "Smart Advertising",
-      description: "Place targeted ads during key moments like timeouts and halftimes when attention is highest.",
+      description: "Place targeted ads during peak attention moments when viewer engagement is highest.",
       icon: "🎯"
     },
     {
